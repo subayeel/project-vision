@@ -2,12 +2,10 @@ import type { Metadata } from "next";
 import { GeistSans, GeistMono } from "geist/font";
 import { cn } from "@/lib/utils";
 import "./globals.css";
-import Image from "next/image";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 
 import { ThemeProvider } from "next-themes";
 import SidebarComponent from "@/app/components/Sidebar";
-import Link from "next/link";
 import React from "react";
 import Script from "next/script";
 
@@ -44,7 +42,7 @@ export default function RootLayout({
       </head>
       <ThemeProvider
         attribute="class"
-        defaultTheme="system"
+        defaultTheme="light"
         enableSystem
         disableTransitionOnChange
       >
@@ -53,19 +51,8 @@ export default function RootLayout({
             <SidebarComponent />
             {/* <SidebarTrigger className="ml-2 aspect-square hidden md:block" /> */}
             <main className="flex flex-col w-full">
-              <div className="border-b flex justify-between xl:hidden py-2 px-3 sticky top-0 z-[20] bg-white/95 dark:bg-gray-700/95">
-                <SidebarTrigger className="ml-2 aspect-square" />
-                <Link href="/">
-                  <Image
-                    src="/logo.png"
-                    alt="Brand logo"
-                    width={32}
-                    height={32}
-                    className="object-contain"
-                  />
-                </Link>
-
-                <div className="w-[28px]"></div>
+              <div className="fixed bottom-3 right-3 z-50 bg-black rounded-full p-4 shadow-md border sm:hidden">
+                <SidebarTrigger className="aspect-square text-white" />
               </div>
 
               <div className="z-10">{children}</div>

@@ -214,8 +214,8 @@ const SidebarComponent = () => {
     <Sidebar>
       <SidebarHeader>
         <SidebarMenu>
-          <SidebarMenuItem className="flex gap-4 items-center">
-            <Link href="/">
+          <SidebarMenuItem className="flex gap-4 items-center justify-between">
+            <Link href="/" className="flex items-center gap-2">
               <Image
                 src="/logo.png"
                 alt="Brand logo"
@@ -223,11 +223,13 @@ const SidebarComponent = () => {
                 height={32}
                 className="object-contain"
               />{" "}
+              <div className="text-core flex flex-col font-semibold text-lg leading-3">
+                <span className="tracking-wide text-lg m-0">
+                  Project Vision
+                </span>{" "}
+                {/* Updated title */}
+              </div>
             </Link>
-            <div className="text-core flex flex-col font-semibold text-lg leading-3">
-              <span className="tracking-wide text-lg m-0">Project Vision</span>{" "}
-              {/* Updated title */}
-            </div>
             <ModeToggle />
           </SidebarMenuItem>
         </SidebarMenu>
